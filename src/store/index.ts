@@ -1,19 +1,21 @@
 import { configureStore } from '@reduxjs/toolkit';
-import card from './card';
-import profile from './profile';
-import uiSlice from './ui-slice';
-import productSlice from './productSlice';
-import userSlice from './user';
-import section from './selectPart';
+import Card from './card';
+import Profile from './profile';
+import UiSlice from './ui-slice';
+import ProductSlice from './productSlice';
+import UserSlice from './user';
+import Section from './selectPart';
+import Status from './statusNotification';
 
 const store = configureStore({
   reducer: {
-    profile: profile.reducer,
-    card: card.reducer,
-    ui: uiSlice.reducer,
-    productSlice: productSlice.reducer,
-    user: userSlice.reducer,
-    select: section.reducer
+    profile: Profile.reducer,
+    card: Card.reducer,
+    ui: UiSlice.reducer,
+    productSlice: ProductSlice.reducer,
+    user: UserSlice.reducer,
+    select: Section.reducer,
+    status: Status.reducer
   }
 });
 export type RootState = ReturnType<typeof store.getState>;

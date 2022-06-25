@@ -113,7 +113,11 @@ module.exports = {
             80: '20rem',
             96: '24rem',
             '5/8': '68%',
-            '10/6': '1.666%'
+            '10/6': '1.5%',
+            '5/100': '5%',
+            '2.5': '2.5%',
+            '8/12': '77.5%',
+            '5/12': '71.5%'
         },
         animation: {
             none: 'none',
@@ -398,7 +402,11 @@ module.exports = {
             '6xl': ['3.75rem', { lineHeight: '1' }],
             '7xl': ['4.5rem', { lineHeight: '1' }],
             '8xl': ['6rem', { lineHeight: '1' }],
-            '9xl': ['8rem', { lineHeight: '1' }]
+            '9xl': ['8rem', { lineHeight: '1' }],
+            '2vw': '2vw',
+            '1vw': '1vw',
+            '3vw': '3vw',
+            '4vw': '4vw'
         },
         fontWeight: {
             thin: '100',
@@ -925,7 +933,8 @@ module.exports = {
             max: 'max-content',
             fit: 'fit-content',
             card: '30%',
-            '1/8': '12.5%'
+            '1/8': '12.5%',
+            '45/100': '45%'
         }),
         willChange: {
             auto: 'auto',

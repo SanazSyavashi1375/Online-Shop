@@ -6,13 +6,10 @@ const initialUiState: {
   cartIsVisible: false,
   notification: null
 };
-const uiSlice = createSlice({
+const UiSlice = createSlice({
   name: 'ui',
   initialState: initialUiState,
   reducers: {
-    toggle(state) {
-      state.cartIsVisible = !state.cartIsVisible;
-    },
     showNotification(state, action) {
       state.notification = {
         status: action.payload.status,
@@ -23,6 +20,6 @@ const uiSlice = createSlice({
   }
 });
 
-export const uiActions = uiSlice.actions;
+export const uiActions = UiSlice.actions;
 
-export default uiSlice;
+export default UiSlice;
