@@ -1,9 +1,9 @@
 import React from 'react';
-import user from '../../models/user';
+import User from '../../models/user';
 import { Avatar } from '@mui/material';
 import avatarImg from '../../assets/image/avatar.jpg';
 import { memo } from 'react';
-const UserProfile: React.FC<{ user: user }> = (props) => {
+const UserProfile: React.FC<{ user: User }> = (props) => {
   return (
     <div className="flex flex-col border border-indigo-600 w-full p-6 border-search shadow-lg">
       <div className="flex flex-row  items-center">

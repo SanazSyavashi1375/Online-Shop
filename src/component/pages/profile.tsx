@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import user from '../../models/user';
+import User from '../../models/user';
 import { profileAction } from '../../store/profile';
 import ProfileModule from '../layout/showUserProfile';
 import { memo } from 'react';
-const Profile: React.FC<{ user: user }> = (props) => {
+const Profile: React.FC<{ user: User }> = (props) => {
   const dispatch = useDispatch();
   const hideProfileHandler = useCallback(() => {
     dispatch(profileAction.hideProfile());

@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import user from '../models/user';
-const initialUserState: { user1: user | any } = {
+import User from '../models/user';
+const initialUserState: { user1: User | any } = {
   user1: {}
 };
-const userSlice = createSlice({
+const UserSlice = createSlice({
   name: 'userSlice',
   initialState: initialUserState,
   reducers: {
@@ -13,5 +13,5 @@ const userSlice = createSlice({
   }
 });
 
-export const userActions = userSlice.actions;
-export default userSlice;
+export const userActions = UserSlice.actions;
+export default UserSlice;

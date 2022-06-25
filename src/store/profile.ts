@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const profile = createSlice({
+const Profile = createSlice({
   name: 'profile',
   initialState: {
     profileIsShown: false
@@ -14,5 +14,5 @@ const profile = createSlice({
     }
   }
 });
-export default profile;
-export const profileAction = profile.actions;
+export default Profile;
+export const profileAction = Profile.actions;
