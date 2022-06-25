@@ -12,7 +12,7 @@ const initialCardState: {
   totalItem: 0,
   totalPrice: 0
 };
-const card = createSlice({
+const Card = createSlice({
   name: 'card',
   initialState: initialCardState,
   reducers: {
@@ -68,5 +68,5 @@ const card = createSlice({
     }
   }
 });
-export const cardAction = card.actions;
-export default card;
+export const cardAction = Card.actions;
+export default Card;
