@@ -21,7 +21,7 @@ const SearchPart = () => {
     [dispatch]
   );
   return (
-    <div className="flex flex-row m-5 mb-0 ">
+    <div className="flex  mb-0  w-full pt-5  flex-col    sm:flex-row pl-2   lg:flex-row mx-0 ml-10/6 pl-2 bg-white">
       <SearchTab searchInputHandler={searchInputHandler} />
       <SelectedPart selectedHandler={selectedHandler} />
     </div>

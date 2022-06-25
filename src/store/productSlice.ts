@@ -11,7 +11,7 @@ const initialproductState: {
   searchedArr: [],
   totalQuantity: 0
 };
-const productSlice = createSlice({
+const ProductSlice = createSlice({
   name: 'productSlice',
   initialState: initialproductState,
   reducers: {
@@ -62,6 +62,6 @@ const productSlice = createSlice({
   }
 });
 
-export const productActions = productSlice.actions;
+export const productActions = ProductSlice.actions;
 
-export default productSlice;
+export default ProductSlice;

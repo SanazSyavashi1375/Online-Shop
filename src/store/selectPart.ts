@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const section = createSlice({
+const Section = createSlice({
   name: 'section',
   initialState: {
     selected: 'none'
@@ -11,5 +11,5 @@ const section = createSlice({
     }
   }
 });
-export const sectionActions = section.actions;
-export default section;
+export const sectionActions = Section.actions;
+export default Section;
