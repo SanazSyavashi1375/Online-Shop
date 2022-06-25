@@ -40,13 +40,13 @@ const ShoppingCartPage = () => {
       <Header name={username} />
       <div className="w-full border-solid border-2 border-black mt-10">
         <div className="w-full ">
-          <div className="flex flex-row flex-wrap h-12  items-center bg-cardHeader text-center  px-10 w-full ">
-            <p className="w-1/8">number</p>
-            <p className="w-1/8">Title</p>
-            <p className="w-3/12">description</p>
-            <p className="w-1/8">Quantity</p>
-            <p className="w-1/8">price</p>
-            <p className="w-1/8">Total price</p>
+          <div className="flex flex-row flex-wrap h-12  items-center bg-cardHeader text-center   w-full text-3vw sm:text-2vw lg:text-1vw ">
+            <p className="w-1/12 text-white  sm:w-1/12  lg:w-1/12 ">number</p>
+            <p className="w-4/12 text-white    lg:w-2/12 ">Title</p>
+            <p className="hidden text-white  lg:inline-block w-4/12 ">description</p>
+            <p className="w-2/12 text-white   ">Quantity</p>
+            <p className="w-2/12 text-white   lg:w-1/12 ">price</p>
+            <p className="w-2/12 text-white  lg:w-1/12 ">Total price</p>
           </div>
           {items.map((item: product, index: number) => (
             <CardRow
@@ -59,9 +59,9 @@ const ShoppingCartPage = () => {
             />
           ))}
         </div>
-        <div className="flex flex-row flex-wrap h-12  items-center   text-center mt-2 px-10 w-full ">
-          <p className="w-1/8 ">Total</p>
-          <p className="w-1/8 pl-5/8 ">{totalPrice}$</p>
+        <div className="flex flex-row flex-wrap h-12  items-center   text-center  w-full text-3vw sm:text-2vw lg:text-1vw ">
+          <p className="w-1/12  ">Total</p>
+          <p className="w-1/8 pl-5/12 lg:pl-8/12 ">{totalPrice}$</p>
         </div>
       </div>
       <Link to="/productsPage" className="text-header flex flex-row-reverse  ">
