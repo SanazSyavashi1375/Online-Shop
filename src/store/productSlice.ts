@@ -16,8 +16,9 @@ const ProductSlice = createSlice({
   initialState: initialproductState,
   reducers: {
     replaceCart(state, action) {
-      state.totalQuantity = action.payload.totalQuantity;
-      state.items = action.payload.items;
+      localStorage.setItem('items', JSON.stringify(action.payload));
+      const item = JSON.parse(localStorage.getItem('items') || '[]'.trim()).items;
+      state.items = item;
       state.selectedItems = state.items;
       state.searchedArr = state.selectedItems;
     },

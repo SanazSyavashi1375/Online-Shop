@@ -11,7 +11,7 @@ const Header: React.FC<{ name: string | any }> = (props) => {
   const showProfile = useCallback(() => {
     dispatch(profileAction.showProfile());
   }, [dispatch]);
-  const totalItem = useSelector((state: any) => state.card.totalItem);
+  const totalItem = useSelector((state: any) => state.card.totalQuantity);
   const totItem = useMemo(() => totalItem, [totalItem]);
   return (
     <div className="bg-gray-300 flex flex-row text-center items-center content-center py-1 justify-between px-5 bg-header overflow-hidden mt-0">
