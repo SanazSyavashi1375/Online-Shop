@@ -10,34 +10,18 @@ import fetchUserData from '../../store/userAction';
 import { AppDispatch, RootState } from '../../store';
 import { memo } from 'react';
 import StatusNotification from '../ui/statusNotification';
-import { productActions } from '../../store/productSlice';
-import { userActions } from '../../store/user';
 const ProductsPage = () => {
   const dispatch: AppDispatch = useDispatch();
-
   useEffect(() => {
-    const input = localStorage.getItem('items') || '[]'.trim();
-    const items = JSON.parse(input);
-    if (items.length === 0) {
-      dispatch(fetchProductData());
-    } else {
-      dispatch(productActions.replaceCart(items));
-    }
+    dispatch(fetchProductData());
   }, [dispatch]);
   const productArr = useSelector((state: RootState) => state.productSlice.searchedArr);
   useEffect(() => {
-    const userInput = localStorage.getItem('user') || '[]'.trim();
-    const user = JSON.parse(userInput);
-    if (user.length === 0) {
-      dispatch(fetchUserData());
-    } else {
-      dispatch(userActions.setUser(user));
-    }
+    dispatch(fetchUserData());
   }, [dispatch]);
   const user = useSelector((state: RootState) => state.user.user1);
-  const name = user.username;
+  const name = useSelector((state: RootState) => state.user.user1.username);
   const productArray = useMemo(() => productArr, [productArr]);
-
   const username = useMemo(() => name, [name]);
   const user1 = useMemo(() => user, [user]);
   const status = useSelector((state: RootState) => state.status.statusIsShown);

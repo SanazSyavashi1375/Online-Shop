@@ -1,14 +1,16 @@
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import product from '../../models/product';
 import CardRow from '../ui/cardRow';
 import Header from '../layout/header';
 import Profile from './profile';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useDispatch } from 'react-redux';
 import { cardAction } from '../../store/card';
 import { memo, useCallback, useMemo } from 'react';
 const ShoppingCartPage = () => {
   const user = useSelector((state: any) => state.user.user1);
-  const items = JSON.parse(localStorage.getItem('shopCardItem') || '[]'.trim());
+  const items = useSelector((state: any) => state.card.items);
   const totalPrice = useSelector((state: any) => state.card.totalPrice);
   const dispatch = useDispatch();
   const addItem = useCallback(
@@ -62,6 +64,10 @@ const ShoppingCartPage = () => {
           <p className="w-1/8 pl-5/12 lg:pl-8/12 ">{totalPrice}$</p>
         </div>
       </div>
+      <Link to="/productsPage" className="text-header flex flex-row-reverse  ">
+        Back
+        <ArrowBackIcon />
+      </Link>
     </div>
   );
 };
