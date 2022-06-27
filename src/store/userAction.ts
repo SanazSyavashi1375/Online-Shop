@@ -1,9 +1,8 @@
-import { uiActions } from './ui-slice';
 import { userActions } from './user';
 export const fetchUserData = () => {
   return async (dispatch: any) => {
     const fetchUser = async () => {
-      const response = await fetch('https://fakestoreapi.com/users/1', { mode: 'cors' });
+      const response = await fetch('https://fakestoreapi.com/users', { mode: 'cors' });
 
       if (!response.ok) {
         throw new Error('Could not fetch user data!');
@@ -15,15 +14,9 @@ export const fetchUserData = () => {
 
     try {
       const userData = await fetchUser();
-      dispatch(userActions.setUser(userData));
+      dispatch(userActions.setUser(userData[0]));
     } catch (error) {
-      dispatch(
-        uiActions.showNotification({
-          status: 'error',
-          title: 'Error!',
-          message: 'Fetching product data failed!'
-        })
-      );
+      console.log(error);
     }
   };
 };
