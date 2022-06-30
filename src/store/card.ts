@@ -55,6 +55,7 @@ const Card = createSlice({
         state.totalQuantity--;
         if (state.totalItem === 0) {
           state.totalPrice = 0;
+          localStorage.setItem('totalPrice', JSON.stringify(state.totalPrice));
         }
       } else {
         existingItem.quantity--;
@@ -63,6 +64,7 @@ const Card = createSlice({
         state.totalQuantity--;
         if (state.totalItem === 0) {
           state.totalPrice = 0;
+          localStorage.setItem('totalPrice', JSON.stringify(state.totalPrice));
         }
       }
       localStorage.setItem('shopCardItem', JSON.stringify(state.items));
@@ -80,6 +82,7 @@ const Card = createSlice({
       state.totalQuantity = state.totalQuantity - existingItem.quantity;
       if (state.totalItem === 0) {
         state.totalPrice = 0;
+        localStorage.setItem('totalPrice', JSON.stringify(state.totalPrice));
       }
       localStorage.setItem('shopCardItem', JSON.stringify(state.items));
       localStorage.setItem('totalQuantity', JSON.stringify(state.totalQuantity));
