@@ -10,7 +10,7 @@ const initialCardState: {
   items: [],
   totalQuantity: parseInt(JSON.parse(localStorage.getItem('totalQuantity') || '0')),
   totalItem: 0,
-  totalPrice: 0
+  totalPrice: parseInt(JSON.parse(localStorage.getItem('totalPrice') || '0'))
 };
 const Card = createSlice({
   name: 'card',
@@ -41,6 +41,7 @@ const Card = createSlice({
       }
       localStorage.setItem('shopCardItem', JSON.stringify(state.items));
       localStorage.setItem('totalQuantity', JSON.stringify(state.totalQuantity));
+      localStorage.setItem('totalPrice', JSON.stringify(state.totalPrice));
     },
     removeItem(state, action) {
       const input = localStorage.getItem('shopCardItem') || '[]'.trim();
@@ -66,6 +67,7 @@ const Card = createSlice({
       }
       localStorage.setItem('shopCardItem', JSON.stringify(state.items));
       localStorage.setItem('totalQuantity', JSON.stringify(state.totalQuantity));
+      localStorage.setItem('totalPrice', JSON.stringify(state.totalPrice));
     },
     deleteItem(state, action) {
       const input = localStorage.getItem('shopCardItem') || '[]'.trim();
@@ -81,6 +83,7 @@ const Card = createSlice({
       }
       localStorage.setItem('shopCardItem', JSON.stringify(state.items));
       localStorage.setItem('totalQuantity', JSON.stringify(state.totalQuantity));
+      localStorage.setItem('totalPrice', JSON.stringify(state.totalPrice));
     }
   }
 });
