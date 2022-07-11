@@ -51,7 +51,33 @@ const ProductSlice = createSlice({
       }
     },
     searchProduct(state, action) {
-      const searchedTitle = action.payload;
+      const searchedTitle = action.payload.serchedInput;
+      const selectCategory = action.payload.selectedCategory;
+      if (selectCategory === 'none') {
+        state.selectedItems = state.items;
+        state.searchedArr = state.selectedItems;
+      } else if (selectCategory === 'electronics') {
+        state.selectedItems = state.items.filter(
+          (item: product) => item.category === 'electronics'
+        );
+        state.searchedArr = state.selectedItems;
+      } else if (selectCategory === 'jewelery') {
+        state.selectedItems = state.items.filter((item: product) => item.category === 'jewelery');
+        state.searchedArr = state.selectedItems;
+      } else if (selectCategory === "men's clothing") {
+        state.selectedItems = state.items.filter(
+          (item: product) => item.category === "men's clothing"
+        );
+        state.searchedArr = state.selectedItems;
+      } else if (selectCategory === "women's clothing") {
+        state.selectedItems = state.items.filter(
+          (item: product) => item.category === "women's clothing"
+        );
+        state.searchedArr = state.selectedItems;
+      } else {
+        state.selectedItems = state.items;
+        state.searchedArr = state.selectedItems;
+      }
       if (searchedTitle === '') {
         state.searchedArr = state.selectedItems;
       } else {
